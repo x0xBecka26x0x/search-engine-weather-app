@@ -1,0 +1,101 @@
+a {
+    color: #885df1;
+  }
+
+   header {
+    border-bottom: 1px solid #f9f7fe;
+    padding-bottom: 0 0 30px 0;
+  }
+
+.Weather h1 {
+    font-size: 34px;
+    font-weight: 100;
+    margin: 20px 0 0 0;
+    margin-left: 30px;
+    line-height: 29px;
+}
+
+.Weather ul {
+    list-style: none;
+    color: rgb(31, 25, 25);
+    font-size: 30px;
+    font-weight: 100;
+}
+
+.Weather form {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.Weather .control {
+      background-color: #f9f7fe;
+      border: none;
+      border-radius: 8px;
+      width: 70%;
+      font-size: 20px;
+      padding: 10px 15px;
+      margin-top: 20px;
+}
+
+.btn {
+        margin: 12px 5px;
+        font-size: 20px;
+        background-color: #885df1;
+        color: white;
+        border: none;
+        padding: 10px;
+        border-radius: 5px;
+  }
+
+  .Weather .temperature {
+    font-size: 75px;
+    font-weight: bold;
+    color: rgb(39, 37, 37);
+    display: flex;
+    justify-content: right;
+    margin-top: -125px;
+    margin-right: 65px;
+  }
+
+  .Weather .unit {
+    display: flex;
+    justify-content: right;
+    margin-top: -75px;
+    margin-right: 15px;
+  }
+
+  .Weather .condition {
+    display: flex;
+    justify-content: right;
+    margin-right: 30px;
+  }
+
+  .Weather .description {
+    margin-top: 35px;
+  }
+
+  .WeatherTemperature {
+    margin-bottom: 45px;
+  }
+
+  .Weather .icon {
+    background-color: #885df1;
+  }
+
+.Weather .Search {
+    margin-left: 5px;
+    font-size: 16px;
+    background-color: #885df1;
+    color: white;
+    border: none;
+    padding: 20px;
+    line-height: 1;
+    border-radius: 5px;
+  }    
+
+footer {
+    border-top: 1px solid #f9f7fe;
+    text-align: center;
+    padding-top: 15px;
+    font-size: 15px;
+  }
