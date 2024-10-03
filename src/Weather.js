@@ -3,6 +3,7 @@ import WeatherInfo from "./WeatherInfo";
 import "./WeatherTemperature";
 import axios from "axios";
 import "./Weather.css";
+import WeatherForecast from "./WeatherForecast";
 
 
 export default function Weather(props) {
@@ -60,7 +61,7 @@ export default function Weather(props) {
                     </div>
                 </form>
                 <WeatherInfo data={weatherDetails} />
-                
+                <WeatherForecast data={weatherDetails.coordinates} />
             </div>
     );
 } else {
