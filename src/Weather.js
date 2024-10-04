@@ -21,7 +21,6 @@ export default function Weather(props) {
             icon_Url: response.data.condition.icon_url,
             icon: response.data.condition.description.icon,
             wind: response.data.wind.speed,
-            city: response.data.city,
         });
     }
 
