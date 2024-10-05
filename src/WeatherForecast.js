@@ -29,7 +29,7 @@ export default function WeatherForecast() {
       
         axios.get(apiUrl).then(handleResponse);
     }
-    
+  }
 
 
-    //https://api.shecodes.io/weather/v1/forecast?query=Paris&key=bf8f1010b3c486eaa378at4e5eo24f84&units=metric
+    //"https://api.shecodes.io/weather/v1/forecast?query=Paris&key=bf8f1010b3c486eaa378at4e5eo24f84&units=metric"
