@@ -13,7 +13,9 @@ export default function Weather(props) {
     function handleResponse(response) {
         setWeatherDetails({
             ready: true,
-            coordinates: response.data.coordinates,
+            //coordinates: response.data.coordinates,
+            latitude: response.data.coordinates.latitude,
+            longitude: response.data.coordinates.longitude,
             temperature: response.data.temperature.current,
             humidity: response.data.temperature.humidity,
             date: new Date(response.data.time * 1000),
