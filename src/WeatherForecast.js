@@ -23,9 +23,11 @@ export default function WeatherForecast() {
             </div>
         );
     } else {
-        let apiKey = "bf8f1010b3c486eaa378at4e5eo24f84";
-        let city = response.data.city;
-        let apiUrl = `https://api.shecodes.io/weather/v1/forecast?query=${city}&key=${apiKey}&units=metric`;
+        let apiKey = "bf8f1010b3c486eaa378at4e5eo24f84"
+        let latitude = props.data.coordinates.lat;
+        let longitude = props.data.coordinates.lon;
+        //let city = response.data.city;
+        let apiUrl = `https://api.shecodes.io/weather/v1/forecast?lat=${latitude}&lon=${longitude}&key=${apiKey}&units=metric`;
       
         axios.get(apiUrl).then(handleResponse);
     }
