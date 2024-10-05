@@ -4,8 +4,6 @@ import WeatherForecastDay from "./WeatherForecastDay";
 import axios from "axios";
 import "./Weather.css";
 
-
-
 export default function Weather(props) {
     const [weatherDetails, setWeatherDetails] = useState({ ready: false });
     const [city, setCity] = useState(props.defaultCity);
@@ -25,7 +23,7 @@ export default function Weather(props) {
             wind: response.data.wind.speed,
         });
     }
-    
+
 
     function handleSubmit(event) {
         event.preventDefault();
