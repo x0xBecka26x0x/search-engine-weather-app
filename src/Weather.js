@@ -13,18 +13,19 @@ export default function Weather(props) {
     function handleResponse(response) {
         setWeatherDetails({
             ready: true,
-            //coordinates: response.data.coordinates,
+            city: response.data.city,
             latitude: response.data.coordinates.latitude,
             longitude: response.data.coordinates.longitude,
             temperature: response.data.temperature.current,
             humidity: response.data.temperature.humidity,
             date: new Date(response.data.time * 1000),
             description: response.data.condition.description,
-            icon_Url: response.data.condition.icon_url,
+            icon_Url: response.data.condition.description.icon_url,
             icon: response.data.condition.description.icon,
             wind: response.data.wind.speed,
         });
     }
+    
 
     function handleSubmit(event) {
         event.preventDefault();
