@@ -5,7 +5,7 @@ import WeatherForecastDay from "./WeatherForecastDay";
 
 export default function WeatherForecast() {
     let [loaded, setLoaded] = useState(false);
-    let [forecast, setForecast] = useState();
+    let [forecast, setForecast] = useState(null);
 
     function handleResponse(response) {
         setForecast(response.data.daily);
