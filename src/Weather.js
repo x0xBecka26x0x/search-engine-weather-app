@@ -8,7 +8,7 @@ export default function Weather(props) {
     const [weatherDetails, setWeatherDetails] = useState({ ready: false });
     const [city, setCity] = useState(props.defaultCity);
 
-    function handleResponse(response) {
+    function handleResponse(response) { console.log(response);
         setWeatherDetails({
             ready: true,
             city: response.data.city,
@@ -18,8 +18,8 @@ export default function Weather(props) {
             humidity: response.data.temperature.humidity,
             date: new Date(response.data.time * 1000),
             description: response.data.condition.description,
-            icon_Url: response.data.condition.description.icon_url,
-            icon: response.data.condition.description.icon,
+            icon_Url: response.data.condition.icon_url,
+            icon: response.data.condition.icon,
             wind: response.data.wind.speed,
         });
     }
@@ -39,6 +39,9 @@ export default function Weather(props) {
         let apiUrl = `https://api.shecodes.io/weather/v1/current?query=${city}&key=${apiKey}&units=metric`;
         axios.get(apiUrl).then(handleResponse);
     }
+
+//https://api.shecodes.io/weather/v1/forecast?query={query}&key={key}
+
 
     if (weatherDetails.ready) {
         return (

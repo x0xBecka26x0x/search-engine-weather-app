@@ -4,12 +4,13 @@ import axios from "axios";
 import WeatherForecastDay from "./WeatherForecastDay";
 
 export default function WeatherForecast() {
-    let [loaded, setLoaded] = useState(false);
-    let [forecast, setForecast] = useState(null);
+    let [loaded, setLoaded] = useState();
+    let [forecast, setForecast] = useState();
 
     function handleResponse(response) {
+        console.log(response.data.daily);
         setForecast(response.data.daily);
-        setLoaded(true);
+        setLoaded();
     }
 
     if (loaded) {
@@ -32,9 +33,9 @@ export default function WeatherForecast() {
         );
     } else {
         let apiKey = "5f472b7acba333cd8a035ea85a0d4d4c";
-        let latitude = props.data.coordinates.lat;
-        let longitude = props.data.coordinates.lon;
-        let apiUrl = `https://api.openweathermap.org/data/3.0/onecall?lat=${latitude}&lon=${longitude}&appid=${apiKey}&units=metric`;
+        //let latitude = props.data.coordinates.lat;
+        //let longitude = props.data.coordinates.lon;
+        let apiUrl = `https://api.shecodes.io/weather/v1/forecast?query=${city}&key=${apiKey}&units=metric`;
         
         axios.get(apiUrl).then(handleResponse);
 
@@ -42,3 +43,4 @@ export default function WeatherForecast() {
     }
   }
 
+  //https://api.shecodes.io/weather/v1/forecast?query=Lisbon&key=bf8f1010b3c486eaa378at4e5eo24f84&units=metric
