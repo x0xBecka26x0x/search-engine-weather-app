@@ -11,9 +11,9 @@ export default function Weather(props) {
     function handleResponse(response) { console.log(response);
         setWeatherDetails({
             ready: true,
-            city: response.data.city,
-            latitude: response.data.coordinates.latitude,
-            longitude: response.data.coordinates.longitude,
+            coordinates: response.data.coordinates,
+            //latitude: response.data.coordinates.latitude,
+            //longitude: response.data.coordinates.longitude,
             temperature: response.data.temperature.current,
             humidity: response.data.temperature.humidity,
             date: new Date(response.data.time * 1000),
@@ -21,6 +21,7 @@ export default function Weather(props) {
             icon_Url: response.data.condition.icon_url,
             icon: response.data.condition.icon,
             wind: response.data.wind.speed,
+            city: response.data.city
         });
     }
 

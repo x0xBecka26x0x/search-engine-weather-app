@@ -2,7 +2,7 @@ import React from "react";
 import FormattedDate from "./FormattedDate";
 //import WeatherIcon from "./WeatherIcon";
 import WeatherTemperature from "./WeatherTemperature";
-import WeatherIcon from "./WeatherIcon";
+import Weather from "./Weather";
 
 
 export default function WeatherInfo(props) {
@@ -19,8 +19,7 @@ export default function WeatherInfo(props) {
             <div className="col-6">
                 <div className="clearfix">
                  <div className="float-left">
-                    <WeatherIcon code="http://shecodes-assets.s3.amazonaws.com/api/weather/icons/few-clouds-day.png" className="weatherIcon" />
-                </div>   
+                    <Weather code="http://shecodes-assets.s3.amazonaws.com/api/weather/icons/rain-day.png" />
                 <WeatherTemperature celsius={props.data.temperature} />
                 </div>
             </div>
@@ -34,5 +33,6 @@ export default function WeatherInfo(props) {
                 </span>
             </div>
         </div>
+    </div>
     );
 }
