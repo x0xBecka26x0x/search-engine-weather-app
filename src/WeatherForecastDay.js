@@ -3,17 +3,25 @@ import "./WeatherForecast.css";
 
 export default function WeatherForecastDay(props) {
     function maxTemperature() {
-        let temperature = Math.round(props.data.temperature.maximum);
+        let temperature = Math.round(props.data.temperature);
         return `${temperature}`;
     }
     function minTemperature() {
-        let temperature = Math.round(props.data.temperature.minimum);
+        let temperature = Math.round(props.data.temperature);
         return `${temperature}`;
     }
     function day() {
         let date = new Date(props.data.time * 1000);
         let day = date.getDay();
-        let days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+        let days = 
+        ["Sunday", 
+         "Monday", 
+         "Tuesday", 
+         "Wednesday",
+         "Thursday",
+         "Friday",
+         "Saturday"];
+         
         return days[day];
     }
 
