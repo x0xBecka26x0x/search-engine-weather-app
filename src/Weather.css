@@ -80,6 +80,10 @@ a {
     margin-bottom: 45px;
   }
 
+  .WeatherTemperature .temperature {
+    color: rgb(249, 15, 245);
+  }
+
   .Weather .icon {
     background-color: #885df1;
   }

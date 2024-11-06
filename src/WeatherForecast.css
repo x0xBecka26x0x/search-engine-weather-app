@@ -6,3 +6,11 @@
     opacity: 0.6;
     margin-left: 5px;
 }
+
+.WeatherForecast-temperatures {
+    color: rgb(249, 15, 245);
+}
+
+.WeatherForecast-temperatures .maximum {
+    color: black;
+}
