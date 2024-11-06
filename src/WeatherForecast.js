@@ -12,8 +12,7 @@ export default function WeatherForecast(props) {
         setLoaded(false);
     }, [props.data]);
     function handleResponse(response) {
-        console.log(response);
-        setForecast(response.data.daily);
+        setForecast(response.data);
         setLoaded(true);
     }
 
@@ -22,28 +21,34 @@ export default function WeatherForecast(props) {
             <div className="WeatherForecast">
                 <div className="row">
                     {forecast.map(function (dailyForecast, index) {
-                        if (index < 5) {
+                         if (index < 5) {
                             return (
                                 <div className="col">
                                     <WeatherForecastDay data={dailyForecast} />
                                 </div>
-                            );
-                        } else {
-                            let apiKey = "bf8f1010b3c486eaa378at4e5eo24f84";
-                            let city = props.data;
-                            console.log(response);
-                            let apiUrl = `https://api.shecodes.io/weather/v1/forecast?query=${city}&key=${apiKey}&units=metric`;
-                            axios.get(apiUrl).then(handleResponse);
-                        }
-                    })}
-                </div>
+                        );
+                    } else {
+                        let apiKey = "bf8f1010b3c486eaa378at4e5eo24f84";
+                        let city = props.data;
+                        console.log(response);
+                        let apiUrl = `https://api.shecodes.io/weather/v1/forecast?query=${city}&key=${apiKey}&units=metric`;
+                        axios.get(apiUrl).then(handleResponse);
+                    }
+                })}
             </div>
-            );
+        </div>
+        );
+            } else {
+                    let apiKey = "bf8f1010b3c486eaa378at4e5eo24f84";
+                    console.log(data);
+                    let city = props.data;
+                    console.log(response);
+                    let apiUrl = `https://api.shecodes.io/weather/v1/forecast?query=${city}&key=${apiKey}&units=metric`;
+                    
+                    axios.get(apiUrl).then(handleResponse);
         }
     }
 
-
+        //console.log(response);
         //bf8f1010b3c486eaa378at4e5eo24f84
-
-
-  //{https://api.shecodes.io/weather/v1/forecast?query=Lisbon&key=bf8f1010b3c486eaa378at4e5eo24f84&units=metric}
+        //https://api.shecodes.io/weather/v1/forecast?query=Lisbon&key=bf8f1010b3c486eaa378at4e5eo24f84&units=metric//
