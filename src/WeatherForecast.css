@@ -9,8 +9,13 @@
 
 .WeatherForecast-temperatures {
     color: rgb(249, 15, 245);
+    margin-bottom: 10px;
 }
 
 .WeatherForecast-temperatures .maximum {
     color: black;
+}
+
+.WeatherForecast-day {
+    margin-top: 50px;
 }

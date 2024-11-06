@@ -13,16 +13,16 @@ export default function WeatherInfo(props) {
                 </li>
                 <li className="text-capitalize">{props.data.description}</li>
             </ul>
-            <div className="row mt-3">
+            <div className="row mt-5">
                 <div className="col-6">
-                    <img
+                    <img className="icon"
                         src={props.data.icon_Url}
                         //src="http://shecodes-assets.s3.amazonaws.com/api/weather/icons/clear-sky-day.png"
                         alt={props.data.description} />
                     <WeatherTemperature celsius={props.data.temperature} />
                 </div>
             </div>
-        <div className="col-6">
+        <div className="col-6 mt-5">
                 <span className="condition">
                     <ul>
                         <li>Humidity: {props.data.humidity}%</li>

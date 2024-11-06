@@ -17,6 +17,7 @@ a {
 
 .Weather ul {
     list-style: none;
+    margin-bottom: -25px;
     color: rgb(31, 25, 25);
     font-size: 30px;
     font-weight: 100;
@@ -55,8 +56,8 @@ a {
     color: rgb(39, 37, 37);
     display: flex;
     justify-content: right;
-    margin-top: -125px;
-    margin-right: 65px;
+    margin-top: -200px;
+    margin-right: 68px;
   }
 
   .Weather .unit {
@@ -85,7 +86,8 @@ a {
   }
 
   .Weather .icon {
-    background-color: #885df1;
+    margin-left: 55px;
+    margin-top: 25px;
   }
 
 .Weather .Search {
