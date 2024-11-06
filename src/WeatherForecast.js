@@ -1,12 +1,16 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import "./WeatherForecast.css";
 import axios from "axios";
 import WeatherForecastDay from "./WeatherForecastDay";
 
-export default function WeatherForecast() {
-    let [loaded, setLoaded] = useState();
-    let [forecast, setForecast] = useState();
+export default function WeatherForecast(props) {
+    let [loaded, setLoaded] = useState(false);
+    let [forecast, setForecast] = useState(null);
 
+
+    useEffect (() => {
+        setLoaded(false);
+    }, [props.data]);
     function handleResponse(response) {
         console.log(response.data);
         setForecast(response.data.daily);
@@ -17,24 +21,31 @@ export default function WeatherForecast() {
         return (
             <div className="WeatherForecast">
                 <div className="row">
-                    <div className="col">
-                        <WeatherForecastDay data={forecast} />
-                    </div>
+                    {forecast.map(function (dailyForecast, index) {
+                        if (index < 5) {
+                            return (
+                                <div className="col">
+                                    <WeatherForecastDay data={dailyForecast} />
+                                </div>
+                            );
+                        } else {
+                            return null;
+                        }
+                    })}
                 </div>
             </div>
             ); 
             } else {
                 let apiKey = "bf8f1010b3c486eaa378at4e5eo24f84";
-                //let latitude = props.coordinates.lat;
-                //let longitude = props.coordinates.lon;
+                let city = props.data;
+                console.log(response);
                 let apiUrl = `https://api.shecodes.io/weather/v1/forecast?query=${city}&key=${apiKey}&units=metric`;
-                
                 axios.get(apiUrl).then(handleResponse);
-
-                return null;
             }
         }
 
 
+        //bf8f1010b3c486eaa378at4e5eo24f84
 
-  //https://api.shecodes.io/weather/v1/forecast?lat={38.71667}&lon={-9.13333}&key=(bf8f1010b3c486eaa378at4e5eo24f84}&units=metric
+
+  //https://api.shecodes.io/weather/v1/forecast?query=Lisbon&key=bf8f1010b3c486eaa378at4e5eo24f84&units=metric

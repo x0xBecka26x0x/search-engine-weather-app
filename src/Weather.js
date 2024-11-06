@@ -11,20 +11,18 @@ export default function Weather(props) {
     function handleResponse(response) { console.log(response);
         setWeatherDetails({
             ready: true,
-            coordinates: response.data.coordinates,
-            //latitude: response.data.coordinates.latitude,
-            //longitude: response.data.coordinates.longitude,
             temperature: response.data.temperature.current,
             humidity: response.data.temperature.humidity,
             date: new Date(response.data.time * 1000),
             description: response.data.condition.description,
-            icon_Url: response.data.condition.icon_url,
             icon: response.data.condition.icon,
             wind: response.data.wind.speed,
-            city: response.data.city
+            city: response.data.city,
+            icon_Url: response.data.condition.icon_url
+            //icon_Url: "http://shecodes-assets.s3.amazonaws.com/api/weather/icons/clear-sky-day.png",
         });
+        setCity(props.defaultCity);
     }
-
 
     function handleSubmit(event) {
         event.preventDefault();
@@ -47,15 +45,16 @@ export default function Weather(props) {
     if (weatherDetails.ready) {
         return (
             <div className="Weather">
-                <form onSubmit={handleSubmit} className="Weather">
+                <form onSubmit={handleSubmit} className="Weather" id="Weather">
                     <div className="row">
-                        <div className="col-6">
+                        <div className="col-9">
                             <input
                                 type="search"
                                 placeholder="Enter a city..."
                                 className="control"
                                 onChange={handleSearchBox}
-                            />
+                                id="Weather"
+                            /> {"     "}
                             <input
                                 type="submit" 
                                 value="Search" 
@@ -65,11 +64,10 @@ export default function Weather(props) {
                     </div>
                 </form>
                 <WeatherInfo data={weatherDetails} />
-                <WeatherForecastDay data={weatherDetails} />
+                <WeatherForecastDay data={weatherDetails.city} />
             </div>
     );
-} else {
-    searchButton();
-    return "Loading...";
-}
+    } else {
+        searchButton();
+    }
 }
