@@ -10,7 +10,7 @@ a {
 .Weather h1 {
     font-size: 34px;
     font-weight: 100;
-    margin: 20px 0 0 0;
+    margin: 20px 10px 0 0;
     margin-left: 40px;
     line-height: 29px;
 }
@@ -19,13 +19,26 @@ a {
     list-style: none;
     margin-bottom: -25px;
     color: rgb(31, 25, 25);
-    font-size: 30px;
+    font-size: 17px;
+    font-weight: 300;
+}
+
+.Weather .humidity {
+    list-style: none;
+    color: rgb(31, 25, 25);
+    font-size: 16px;
     font-weight: 100;
+}
+
+.Weather .description {
+    text-transform: capitalize;
+    font-weight: 300;
 }
 
 .Weather form {
     display: flex;
     justify-content: space-evenly;
+    margin-bottom: 45px;
 }
 
 .Weather .control {
@@ -56,7 +69,7 @@ a {
     color: rgb(39, 37, 37);
     display: flex;
     justify-content: right;
-    margin-top: -200px;
+    margin-top: -250px;
     margin-right: 68px;
   }
 
@@ -73,10 +86,6 @@ a {
     margin-right: 30px;
   }
 
-  .Weather .description {
-    margin-top: 35px;
-  }
-
   .WeatherTemperature {
     margin-bottom: 45px;
   }
@@ -86,8 +95,8 @@ a {
   }
 
   .Weather .icon {
-    margin-left: 55px;
-    margin-top: 30px;
+    margin-left: 70px;
+    margin-top: 40px;
   }
 
 .Weather .Search {
