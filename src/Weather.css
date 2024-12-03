@@ -69,7 +69,7 @@ a {
     color: rgb(39, 37, 37);
     display: flex;
     justify-content: right;
-    margin-top: -250px;
+    margin-top: -180px;
     margin-right: 68px;
   }
 
@@ -95,8 +95,8 @@ a {
   }
 
   .Weather .icon {
-    margin-left: 70px;
-    margin-top: 40px;
+    margin-left: 80px;
+    margin-top: 50px;
   }
 
 .Weather .Search {

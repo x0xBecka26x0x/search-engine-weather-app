@@ -12,43 +12,49 @@ export default function WeatherForecast(props) {
   }, [props.coordinates]);
 
   function handleResponse(response) {
-    console.log(response);
-    setLoaded(true);
     setForecast(response.data.daily);
+    setLoaded(true);
   }
 
-  function load() {
-    console.log();
-    let apiKey = "bf8f1010b3c486eaa378at4e5eo24f84";
-    let longitude = props.coordinates.lon;
-    let latitude = props.coordinates.lat;
-    let apiUrl = `https://api.shecodes.io/weather/v1/forecast?lon=${longitude}&lat=${latitude}&key=${apiKey}&units=metric`;
+  //function load() {
+    //console.log();
+    //let apiKey = "bf8f1010b3c486eaa378at4e5eo24f84";
+    //let longitude = props.coordinates.lon;
+    //let latitude = props.coordinates.lat;
+    //let apiUrl = `https://api.shecodes.io/weather/v1/forecast?lon=${longitude}&lat=${latitude}&key=${apiKey}&units=metric`;
 
-    axios.get(apiUrl).then(handleResponse);
+   // axios.get(apiUrl).then(handleResponse);
 
-  }
+  //}
 
 
   if (loaded) {
       return (
-          <div className="WeatherForecast">
-              <div className="row">
-                  {forecast.map(function (dailyForecast, index) {
-                      if (index < 6) {
-                          return (
-                              <div className="col" key={index}>
-                                  <WeatherForecastDay data={dailyForecast} />
-                              </div>
-                          );
-                      } else {
-                          return null;
-                      }
-                  })}
-              </div>
-          </div>
+        <div className="WeatherForecast">
+            <div className="row">
+                <div className="col">
+                    <WeatherForecastDay data={forecast["0"]} />
+                    
+                    <WeatherForecastDay data={forecast["1"]} />
+                    
+                    <WeatherForecastDay data={forecast["2"]} />
+                    
+                    <WeatherForecastDay data={forecast["3"]} />
+                    
+                    <WeatherForecastDay data={forecast["4"]} />
+                </div>
+            </div>
+        </div>
       );
   } else {
-      load();
-      return null;
+    let apiKey = "bf8f1010b3c486eaa378at4e5eo24f84";
+    let longitude = props.coordinates.longitude;
+    let latitude = props.coordinates.latitude;
+    let apiUrl = `https://api.shecodes.io/weather/v1/forecast?lon=${longitude}&lat=${latitude}&key=${apiKey}&units=metric`;
+
+    axios.get(apiUrl).then(handleResponse);
+
+    return null;
+    }
   }
-  }
+  

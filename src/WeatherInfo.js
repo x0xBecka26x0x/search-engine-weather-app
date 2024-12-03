@@ -17,16 +17,23 @@ export default function WeatherInfo(props) {
                     <li>Wind: {Math.round(props.data.wind)} km/h%</li>
                 </div>
             </ul>
-            <div className="row mt-5">
+            <div className="row mt-3">
                 <div className="col-6">
-                    <img className="icon"
-                        src={props.data.icon_Url}
-                        alt={props.data.description}
-                        //src="http://shecodes-assets.s3.amazonaws.com/api/weather/icons/clear-sky-day.png"
-                     />
-                    <WeatherTemperature celsius={props.data.temperature} />
+                <div className="icon">
+                        <img
+                            src={props.data.iconUrl}
+                            alt={props.data.description}
+                        />
+                    </div>
+                    <div className="float-right">
+                  <WeatherTemperature celsius={props.data.temperature} />
                 </div>
-            </div>
+                </div>
+              </div>
         </div>
     );
 }
+
+
+
+//src="http://shecodes-assets.s3.amazonaws.com/api/weather/icons/clear-sky-day.png"
