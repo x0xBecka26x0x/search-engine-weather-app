@@ -19,16 +19,24 @@ export default function WeatherForecast(props) {
   if (loaded) {
       return (
         <div className="WeatherForecast">
-                      <WeatherForecastDay data={forecast["0"]} /> 
-                      
-                      <WeatherForecastDay data={forecast["1"]} />
-                  
-                      <WeatherForecastDay data={forecast["2"]} />
-                 
-                      <WeatherForecastDay data={forecast["3"]} />
-                  
-                      <WeatherForecastDay data={forecast["4"]} />
-            </div>      
+          <div className="row">
+                <div className="column">
+                          <WeatherForecastDay data={forecast["0"]} /> 
+                </div>
+                <div className="column">          
+                          <WeatherForecastDay data={forecast["1"]} />
+                </div>
+                <div className="column">
+                          <WeatherForecastDay data={forecast["2"]} />
+                </div>
+                <div className="column">
+                          <WeatherForecastDay data={forecast["3"]} />
+                </div>
+                <div className="column">      
+                          <WeatherForecastDay data={forecast["4"]} />
+                </div>
+              </div>
+            </div>     
       );
   } else {
     let apiKey = "bf8f1010b3c486eaa378at4e5eo24f84";

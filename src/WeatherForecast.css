@@ -26,4 +26,9 @@
     background-color: rgb(203, 198, 198);
 }
 
-
+.WeatherForecast .column {
+    float: left;
+    width: 20%;
+    margin-top: 85px;
+    margin-bottom: 25px;
+}
