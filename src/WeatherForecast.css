@@ -21,13 +21,14 @@
 
 .WeatherForecast-day {
     margin-top: 10px;
-    display: flex;
-    justify-content: center;
 }
 
 .WeatherForecast .icon {
     background-color: rgb(203, 198, 198);
-    display: block;
-    margin: 0 auto;
+}
+
+.WeatherForecast .col {
+    display: flex;
+    justify-content: space-evenly;
 }
 
