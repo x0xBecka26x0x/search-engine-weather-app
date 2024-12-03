@@ -1,6 +1,7 @@
 import React from "react";
 import "./WeatherForecast.css";
 
+
 export default function WeatherForecastDay(props) {
     console.log();
     function maxTemperature() {
@@ -28,13 +29,13 @@ export default function WeatherForecastDay(props) {
     return (
         <div className="WeatherForecast">
                 <div className="WeatherForecast-day">{day()}</div>
-                <div className="icon">
-                        <img
-                            src="http://shecodes-assets.s3.amazonaws.com/api/weather/icons/clear-sky-day.png"
-                            alt={props.data.description}
-                            //src="http://shecodes-assets.s3.amazonaws.com/api/weather/icons/clear-sky-day.png"
-                        />
-                    </div>
+                <img
+                    src={props.data.condition.icon_url}
+                    alt={props.data.condition.icon}
+                    width={50}
+                    height={50}
+                />
+      {/* <WeatherIcon code={forecast[0].condition.icon}  size={36}/> */}
             <div className="WeatherForecast-temperatures">
                     <span className="WeatherForecast-temperature-max">
                         {maxTemperature()}
