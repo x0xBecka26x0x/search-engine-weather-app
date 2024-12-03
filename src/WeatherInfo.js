@@ -23,6 +23,7 @@ export default function WeatherInfo(props) {
                         <img
                             src={props.data.iconUrl}
                             alt={props.data.description}
+                            //src="http://shecodes-assets.s3.amazonaws.com/api/weather/icons/clear-sky-day.png"
                         />
                     </div>
                     <div className="float-right">
@@ -36,4 +37,4 @@ export default function WeatherInfo(props) {
 
 
 
-//src="http://shecodes-assets.s3.amazonaws.com/api/weather/icons/clear-sky-day.png"
+
