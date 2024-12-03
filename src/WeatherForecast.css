@@ -22,13 +22,9 @@
     margin-top: 10px;
 }
 
-.WeatherForecast .icon {
-    background-color: rgb(203, 198, 198);
-}
-
 .WeatherForecast .column {
     float: left;
     width: 20%;
     margin-top: 85px;
-    margin-bottom: 25px;
+    margin-bottom: 45px;
 }
