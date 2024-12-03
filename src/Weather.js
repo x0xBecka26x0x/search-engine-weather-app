@@ -66,10 +66,11 @@ export default function Weather(props) {
                     </div>
                 </form>
                 <WeatherInfo data={weatherDetails} />
-                <WeatherForecast data={weatherDetails.city} />
+                <WeatherForecast coordinates={weatherDetails.coordinates} />
             </div>
-    );
+        );
     } else {
         searchButton();
+        return "Loading...";
     }
 }
