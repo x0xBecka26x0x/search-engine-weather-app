@@ -18,10 +18,9 @@ export default function WeatherInfo(props) {
                 </div>
             </ul>
             <div className="row mt-3">
-                <div className="col-6">
                 <div className="icon">
                         <img
-                            src={props.data.iconUrl}
+                            src={props.data.icon_Url}
                             alt={props.data.description}
                             //src="http://shecodes-assets.s3.amazonaws.com/api/weather/icons/clear-sky-day.png"
                         />
@@ -31,7 +30,6 @@ export default function WeatherInfo(props) {
                 </div>
                 </div>
               </div>
-        </div>
     );
 }
 
